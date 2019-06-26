@@ -5,7 +5,7 @@
 			<view class="master-user">能天使</view>
 			<view class="master-fans"><text class="bold">1111</text> 收听</view>
 		</view>
-    <view class="master-follow">收听</view>
+    <view class="master-follow"catchtap="followfunction">收听</view>
 	</view>
 	<view class="master-intro">{{masterIntro}}</view>
 	<view class="detail">
