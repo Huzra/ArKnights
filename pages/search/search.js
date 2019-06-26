@@ -2,7 +2,7 @@
 Page({
   data: {
     imgUrls: [
-      "/images/avatar/img1.png",
+      "/images/avatar/img1.jpg",
       "/images/avatar/img2.jpg",
       "/images/avatar/img3.jpg"
     ],

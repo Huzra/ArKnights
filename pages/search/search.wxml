@@ -1,3 +1,14 @@
+<template name="master-column">
+	<view class="master-info" bindtap="toPerson" data-master="">
+		<image src="/img/avatar/{{avater}}"></image>
+		<view class="master-brief">
+			<view class="master-user">{{name}}</view>
+			<view class="master-intro">{{intro}}</view>
+			<view class="master-fans">{{fans}} 收听</view>
+		</view>
+		<view class="master-follow">收听</view>
+	</view>
+</template>
 <view class="weui-search-bar">
    <view class="weui-search-bar__form">
     <view class="weui-search-bar__box">
@@ -15,8 +26,32 @@
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{imgUrls}}">
     <swiper-item>
-      <image src="{{item}}" class="slide-image" />
+      <image src="{{item}}" class="slide-image" mode="aspectFill"/>
     </swiper-item>
   </block>
 </swiper>
+<view class="column-title">热推名人</view>
+<view class="column-wrapper">
+<view class="master-info" bindtap="toPerson" data-master="">
+		<image src="/images/avatar/aneng.jpg"></image>
+		<view class="master-brief">
+			<view class="master-user">能天使</view>
+			<view class="master-intro">{{intro}}</view>
+			<view class="master-fans">1000 收听</view>
+		</view>
+		<view class="master-follow">收听</view>
+	</view>
+</view>
 
+<view class="column-title">新晋榜</view>
+<view class="column-wrapper">
+	<view class="master-info" bindtap="toPerson" data-master="">
+		<image src="/images/avatar/aneng.jpg"></image>
+		<view class="master-brief">
+			<view class="master-user">不能天使</view>
+			<view class="master-intro">{{intro}}</view>
+			<view class="master-fans">3 收听</view>
+		</view>
+		<view class="master-follow">收听</view>
+	</view>
+</view>
