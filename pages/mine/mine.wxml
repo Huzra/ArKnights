@@ -1,0 +1,42 @@
+<view>
+	<view class="userinfo" style="flex-direction:row;">
+  <open-data type="userAvatarUrl" class='img'></open-data>
+  <view class="userset" style="flex-direction:column;">
+  <open-data type="userNickName" class='nick' lang="zh_CN"></open-data>
+  <view class="intro">简介：暂无介绍</view>
+  </view>
+  </view>
+</view>
+
+<view class="flex-wrp" style="flex-direction:row;">
+  <view class="sec1" style="flex-direction:column;">
+    <view class="flex-num1">124</view>
+    <view class="flex-item1">心声</view>
+  </view>
+  <view class="sec2" style="flex-direction:column;">
+    <view class="flex-num2">55</view>
+    <view class="flex-item2">关注</view>
+  </view>
+  <view class="sec3" style="flex-direction:column;">
+    <view class="flex-num3">100</view>
+    <view class="flex-item3">粉丝</view>
+  </view>
+</view>
+
+<view class="profile-wrapper" catchtap="loadProfile">
+		<block wx:for="{{myProfile}}" >
+			<view class="profile" id="{{item.id}}">
+				<view class="profile-item"> {{item.desc}} </view>
+				<image class="profile-arrow" src="/images/arrow.png"></image>
+			</view>
+		</block>
+	</view>
+	<view class="account-wrapper">
+		<view class="account" wx:for="{{myAccount}}">
+			<view class="account-item"> {{item}} </view>
+			<image class="account-arrow" src="/images/arrow.png"></image>
+		</view>
+	</view>
+
+
+

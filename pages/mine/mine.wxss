@@ -1,0 +1,112 @@
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin-bottom: 0rpx;
+}
+
+.img {
+  width: 140rpx;
+  height: 140rpx;
+  margin: 44rpx;
+  border-radius: 50%;
+  display: flex;
+  overflow:hidden;
+}
+
+.userset{
+  display: flex;
+  margin: -5rpx;
+  flex-direction: row;
+  align-items: left;
+  justify-content: center;
+  line-height:22pt
+}
+
+.nick{
+  font-family:"Times New Roman";
+  font-weight:300;
+  letter-spacing:2rpx;
+  font-size:20px;
+}
+
+.intro{
+  font-family:"宋体";
+  font-weight:500;
+  color: rgb(158, 157, 157);
+  font-size:12px;
+}
+
+.flex-wrp{
+  display: flex;
+  margin-top: 3rpx;
+  flex-direction: row;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  background-color: #fff;
+  border-color:#eee
+}
+
+.flex-num1{
+  margin-left: 115rpx;
+  font-size:32rpx;
+}
+
+.flex-num2{
+  margin-left: 170rpx;
+  font-size:32rpx;
+}
+
+.flex-num3{
+  margin-left: 170rpx;
+  font-size:32rpx;
+}
+
+.flex-item1{
+  color: rgb(158, 157, 157);
+  margin-left: 115rpx;
+  letter-spacing:2px;
+  font-size:12px;
+}
+
+.flex-item2{
+  color: rgb(158, 157, 157);
+  margin-left: 160rpx;
+  letter-spacing:2px;
+  font-size:12px;
+}
+
+.flex-item3{
+  color: rgb(158, 157, 157);
+  margin-left: 175rpx;
+  letter-spacing:2px;
+  font-size:12px;
+}
+
+.profile-wrapper, .account-wrapper {
+    margin-top: 30rpx;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.profile, .account {
+    display: flex;
+    padding: 30rpx;
+    align-items: center;
+    flex-direction: row;
+    border-bottom: 1rpx solid #f0f0f0;
+}
+
+.profile-item, .account-item {
+    flex: 1;
+    font-size: 24rpx;
+}
+
+.profile-arrow, .account-arrow {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.btn-quit {
+    margin: 15rpx;
+}
