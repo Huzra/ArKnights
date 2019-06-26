@@ -43,7 +43,7 @@
 	</view>
 </view>
 
-<view class="column-title">新晋榜</view>
+<view class="column-title">新人用户</view>
 <view class="column-wrapper">
 	<view class="master-info" bindtap="toPerson" data-master="">
 		<image src="/images/avatar/aneng.jpg"></image>

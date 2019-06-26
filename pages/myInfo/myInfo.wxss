@@ -1,0 +1,94 @@
+/* pages/myInfo/myInfo.wxss */
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+    margin-top: 20rpx;
+}
+
+.userinfo-avatar{
+width: 148rpx;
+    height: 148rpx;
+    margin: 10rpx;
+    border-radius: 10%;
+}
+
+.userinfo-nickname {
+    margin: 10rpx;
+    font-size: 40rpx;
+    color: #300e0e;
+}
+
+.userinfo-desc {
+    color: #bbb;
+    font-size: 20rpx;
+    margin-bottom: 20rpx;
+}
+.id{
+  display: flex;
+  padding: 30rpx;
+  align-items: center;
+  flex-direction: row;
+  background-color:white;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.idTitle{
+  flex: 1;
+  font-size: 24rpx;
+}
+
+.idText{
+  font-size: 24rpx;
+}
+.motto{
+  display: flex;
+  padding: 30rpx;
+  flex-direction: row;
+  align-items:center;
+  background-color:white;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.moTitle{
+  width:160rpx;
+  font-size: 24rpx;
+}
+
+.input{
+  height: 144rpx;
+  font-size: 24rpx;
+}
+.location{
+  display: flex;
+  padding: 30rpx;
+  align-items: center;
+  flex-direction: row;
+  background-color:white;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.locTitle{
+  flex: 1;
+  font-size: 24rpx;
+}
+
+.locText{
+  font-size: 24rpx;
+}
+
+.gender{
+  display: flex;
+  padding: 30rpx;
+  align-items: center;
+  flex-direction: row;
+  background-color:white;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.genTitle{
+  flex: 1;
+  font-size: 24rpx;
+}
+
+.genText{
+  font-size: 24rpx;
+}

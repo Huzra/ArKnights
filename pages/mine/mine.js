@@ -1,4 +1,5 @@
 // pages/mine/mine.js
+var app = getApp()
 Page({
 
   /**
@@ -6,14 +7,15 @@ Page({
    */
   data: {
     showOrHidden: true,
-    userInfo: {},
+    userInfo: {}, //用户基本信息
+    hasUserInfo: false, //是否获得用户信息
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),  //当前版本能否用open-type
     myProfile: [
-      { "desc": "我的分币", "id": "coin" },
-      { "desc": "我问", "id": "myQues" },
-      { "desc": "我听", "id": "myHeared" }
+      { "desc": "我的资料", "id": "myInfo" },
+      { "desc": "我问", "id": "myQues" }
     ],
-   myAccount: ["手机号码", "帮助", "结算说明", "关于分答"]
-
+    myAccount: ["帮助", "关于分答"],
+    motto:"暂无简介"
   },
 
   /**
@@ -34,7 +36,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      motto:app.globalData.motto
+    })
   },
 
   /**
@@ -70,5 +74,30 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+   getUserInfo: function (e) {
+    console.log(e.detail.userInfo);
+    if (e.detail.userInfo == null) { }
+    else {
+      app.globalData.userInfo = e.detail.userInfo;
+      this.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true
+      })
+    }
+  },
+
+  quit(e) {
+    this.setData({
+      userInfo: {},
+      hasUserInfo: false
+    })
+  },
+  //我的页面跳转
+  myInfo:function(){
+    wx.navigateTo({
+      url:'../myInfo/myInfo'
+    })
   }
+
 })

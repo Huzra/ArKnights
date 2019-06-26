@@ -1,3 +1,11 @@
+.login{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+
 .userinfo {
     display: flex;
     flex-direction: column;
@@ -20,21 +28,22 @@
   flex-direction: row;
   align-items: left;
   justify-content: center;
-  line-height:22pt
 }
 
 .nick{
   font-family:"Times New Roman";
   font-weight:300;
   letter-spacing:2rpx;
-  font-size:20px;
+  font-size:40rpx;
 }
 
 .intro{
   font-family:"宋体";
   font-weight:500;
   color: rgb(158, 157, 157);
-  font-size:12px;
+  font-size:24rpx;
+  word-break: break-all;
+  padding: 10rpx;
 }
 
 .flex-wrp{
@@ -65,22 +74,22 @@
 .flex-item1{
   color: rgb(158, 157, 157);
   margin-left: 115rpx;
-  letter-spacing:2px;
-  font-size:12px;
+  letter-spacing:4rpx;
+  font-size:24rpx;
 }
 
 .flex-item2{
   color: rgb(158, 157, 157);
   margin-left: 160rpx;
-  letter-spacing:2px;
-  font-size:12px;
+  letter-spacing:4rpx;
+  font-size:24rpx;
 }
 
 .flex-item3{
   color: rgb(158, 157, 157);
   margin-left: 175rpx;
-  letter-spacing:2px;
-  font-size:12px;
+  letter-spacing:4rpx;
+  font-size:24rpx;
 }
 
 .profile-wrapper, .account-wrapper {

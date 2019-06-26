@@ -1,0 +1,30 @@
+<!--pages/myInfo/myInfo.wxml-->
+
+<view class="containner">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+</view>
+
+<view class="id">
+    <view class="idTitle">用户名：</view>
+    <view class="idText">{{userInfo.nickName}}</view>
+</view>
+
+<view class="motto">
+    <view class="moTitle">签名：</view>
+    <input class="input" name="moText" bindinput="inputMotto">{{motto}}</input>
+</view>
+
+<view class="info-pad">
+  <view class="location">
+    <view class="locTitle">位置：</view>
+    <view class="locText">{{userInfo.country}} {{userInfo.province}} {{userInfo.city}}</view>
+  </view>
+</view>
+
+  <view class="gender">
+    <view class="genTitle">性别：</view>
+    <view class="genText">"{{gender}}"</view>
+  </view>

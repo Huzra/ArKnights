@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/mine/mine",
     "pages/home/home",
     "pages/search/search",
-    "pages/mine/mine"
+    "pages/myInfo/myInfo",
+    "pages/person/person"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -32,6 +34,12 @@
       {
         "pagePath": "pages/mine/mine",
         "text": "我的",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine1.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "P",
         "iconPath": "images/mine.png",
         "selectedIconPath": "images/mine1.png"
       }

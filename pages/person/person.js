@@ -1,13 +1,16 @@
+// pages/person/person.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    hidden: true,
-    motto: 'Hello World',
     userInfo: {},
     feedList: [{
       "stamp": "1201",
       "question": "最近\"谷物大脑\"很火，多个观点挑战传统观念，如杂物全麦等不利于大脑健康，容易造成老年痴呆症，请问您在吗解读本书观点",
-      "masterID": "123",
-      "time":"5分钟前",
+      "masterID": "gzy",
+      "time": "5分钟前",
       "masterAvatar": "person1.jpg"
     },
     {
@@ -27,7 +30,7 @@ Page({
     {
       "stamp": "1204",
       "question": "现在国学文化很火，我们是否将国学作为孩子的重点内容学习？这样的学习能为孩子以后工作生活带来加分电吗？",
-      "masterID": "zgl", 
+      "masterID": "zgl",
       "time": "前天19:55",
       "masterAvatar": "person4.jpg"
     },
@@ -71,6 +74,61 @@ Page({
       "masterAvatar": "person5.jpg"
     }
     ]
-  }
+  },
 
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
 })

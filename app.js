@@ -1,12 +1,16 @@
 //app.js
 App({
+  isDebug: true,
+  onShow: function () {
+    console.log('App Show')
+  },
+  onHide: function () {
+    console.log('App Hide')
+  },
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
+    try {
+      wx.clearStorageSync()
+    } catch (e) { }
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
@@ -34,6 +38,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    motto:"一个十块钱的电子手表跟一个一百万的劳力士，时间都是一样地转动"
   }
 })
