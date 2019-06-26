@@ -1,5 +1,5 @@
 <view class="login">
-  <button class = "btn-login" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登陆 </button>
+  <button class = "btn-login" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
   <block wx:else>
     <view class="userinfo" style="flex-direction:row;">
     <view>

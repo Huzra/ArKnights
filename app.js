@@ -4,12 +4,18 @@ App({
   onShow: function () {
     console.log('App Show')
   },
+  
   onHide: function () {
     console.log('App Hide')
   },
   onLaunch: function () {
     try {
       wx.clearStorageSync()
+      //云初始化
+      wx.cloud.init({
+        env: 'nmsl-fcwyb',
+        traceUser: true
+      })
     } catch (e) { }
     wx.login({
       success: res => {

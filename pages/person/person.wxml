@@ -13,7 +13,7 @@
 		<view>信息2</view>
 	</view>
 </view>
-<scroll-view scroll-y="true" style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower">
+<scroll-view scroll-y="true" style="height: 70%;" bindscrolltoupper="upper" bindscrolltolower="lower">
 <view class="column-title">历史心声</view>
 <block wx:for="{{feedList}}">
 <navigator class="scroll-view-item" url="../issue/issue?stamp={{item.stamp}}">
