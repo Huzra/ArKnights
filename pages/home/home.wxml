@@ -20,7 +20,18 @@
 		</navigator>
 	</block>
 </scroll-view>
-
+<view wx:if="{{isSpeaking}}" class="microphone">
+  <image class="sound-style" src="/images/sound.png" mode="aspectFill"></image>
+  <image wx:if="{{j==2}}" class="sound-style" src="/images/sound.png" mode="aspectFill"></image>
+  <image wx:if="{{j==3}}" class="sound-style" src="/images/sound.png" mode="aspectFill"></image>
+  <image wx:if="{{j==4}}" class="sound-style" src="/images/sound.png" mode="aspectFill"></image>
+  <image wx:if="{{j==5}}" class="sound-style" src="/images/sound.png" mode="aspectFill"></image>
+</view>
+<view class="record-style">
+  <button class="btn-style" bindtouchstart="touchdown" bindtouchend="touchup" >
+  <image class="sound_style" src="/images/1.png" ></image>
+  </button>
+</view>
 <loading hidden="{{hidden}}">
 	加载中...
 </loading>

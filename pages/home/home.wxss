@@ -70,3 +70,46 @@
 	color: rgb(182, 179, 179);
   font-size: 20rpx;
 }
+
+.record-style{  
+    position: fixed;  
+    bottom: 65rpx;  
+    left: 0;  
+    height: 120rpx;  
+    width: 100%;  
+}  
+.btn-style{ 
+  width: 150rpx;
+  height: 150rpx;
+  background-color: rgb(255, 255, 255);
+  color: #999999;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+}  
+
+.sound-style{  
+  position: absolute;  
+  width: 74rpx;  
+  height:150rpx;  
+  margin-top: 45rpx;  
+  margin-left: 83rpx;  
+}  
+.microphone{  
+    position:fixed;
+    left: 260rpx;
+    bottom: 200rpx;
+    height: 240rpx;  
+    width: 240rpx;  
+    border-radius: 20rpx;  
+    margin: 50% auto;  
+    background: rgba(0,0,0,0.3);  
+}  
+.sound_style{
+  width: 150rpx;
+  height: 150rpx;
+}
+ 

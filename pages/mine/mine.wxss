@@ -43,6 +43,7 @@
   color: rgb(158, 157, 157);
   font-size:24rpx;
   word-break: break-all;
+  margin-right: 20rpx;
   padding: 10rpx;
 }
 

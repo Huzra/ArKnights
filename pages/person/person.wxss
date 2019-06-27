@@ -1,49 +1,79 @@
-.about{
-	background-color: #fff;
-	margin-bottom: 5rpx;
-}
 .master-info{
 	display: flex;
 	justify-content: space-between;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 	padding: 30rpx;
 	background-color: #fff;
-	margin-bottom: 30rpx;
+  padding-top: 18rpx;
+	padding-bottom: 10rpx;
 }
 .master-info image{
-	width: 100rpx;
-	height: 100rpx;
+	width: 130rpx;
+	height: 130rpx;
 	border-radius: 50%;
 }
 .master-brief{
 	height: 80rpx;
-	padding-left: 40rpx;
-	flex: 1;
+  padding-top: 10rpx;
+  align-items: center;
 	display: flex;
-	justify-content: space-between;
 	flex-direction: column;
-	align-items: flex-start;
 }
 .master-user{
 	font-size: 35rpx;
+  font-weight: 5rpx;
 	letter-spacing: 1px;
+}
+
+.person{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+.master-fol{
+	color: #888;
+  font-size: 25rpx;
+  padding-left: -50rpx;
 }
 .master-fans{
 	color: #888;
   font-size: 25rpx;
+  padding-left: 50rpx;
 }
-.master-follow{
-	color: #ddd;
-	width: 100rpx;
-  height: 50rpx;
-  padding-top: 10rpx;
-	border-radius: 30rpx;
-	background-color: #999;
-	text-align: center;
 
-  font-size: 30rpx;
+.message{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
 }
+
+.master-follow{
+	color: #b22222;
+	width: 80rpx;
+	padding: 8rpx;
+  margin-top: 60rpx;
+  margin-left: 70rpx;
+	border-radius: 3rpx;
+  border:2rpx solid #b22222;
+	text-align: center;
+  font-size: 22rpx;
+}
+
+.master-private{
+	color: #b22222;
+	width: 80rpx;
+	padding: 8rpx;
+  margin-top: 60rpx;
+  margin-left: -5rpx;
+	border-radius: 3rpx;
+  border:2rpx solid #b22222;
+	text-align: center;
+  font-size: 22rpx;
+}
+
 .bold{
 	font-weight: bold;
 	color: #000;
@@ -53,10 +83,54 @@
 	letter-spacing: 1px;
 }
 .detail{
-	padding: 10rpx 50rpx 50rpx 50rpx;
+  margin-top: 15rpx;
 	letter-spacing: 1px;
   font-size: 25rpx;
 }
+
+.sec1{
+  display: flex;
+  flex-direction: row;
+}
+
+.choose image{
+  padding-left: 500rpx;
+  padding-top: -4rpx;
+  width: 34rpx;
+  height: 34rpx;
+}
+.column-title{
+	font-size: 20rpx;
+	color: #666;
+  padding-left: 8rpx;
+}
+.column-choose{
+  font-size: 20rpx;
+	color: #0061b2;
+}
+
+.sec2{
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+  margin-bottom: 2rpx;
+}
+.top image{
+  padding-left: 10rpx;
+  padding-top: 6rpx;
+  width: 34rpx;
+  height: 34rpx;
+}
+.column-top{
+  font-size: 20rpx;
+	color: #d81e06;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+
 .quiz-wrapper{
 	background-color: #fff;
 	display: flex;
@@ -101,15 +175,7 @@
   flex-direction: column;
   align-items: center;
 }
-.column-title{
-	background-color: #fff;
-	text-align: center;
-	padding: 30rpx;
-	font-size: 28rpx;
-	color: #666;
-  margin-top: 15rpx;
-  margin-bottom: 10rpx;
-}
+
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;

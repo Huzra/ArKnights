@@ -8,6 +8,7 @@ App({
   onHide: function () {
     console.log('App Hide')
   },
+ 
   onLaunch: function () {
     try {
       wx.clearStorageSync()

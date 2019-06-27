@@ -3,8 +3,8 @@
     "pages/mine/mine",
     "pages/home/home",
     "pages/search/search",
-    "pages/myInfo/myInfo",
-    "pages/person/person"
+    "pages/myInfo/myInfo"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -36,13 +36,8 @@
         "text": "我的",
         "iconPath": "images/mine.png",
         "selectedIconPath": "images/mine1.png"
-      },
-      {
-        "pagePath": "pages/person/person",
-        "text": "P",
-        "iconPath": "images/mine.png",
-        "selectedIconPath": "images/mine1.png"
       }
+      
     ]
   },
   "sitemapLocation": "sitemap.json"

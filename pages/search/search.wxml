@@ -32,26 +32,26 @@
 </swiper>
 <view class="column-title">热推名人</view>
 <view class="column-wrapper">
-<view class="master-info" bindtap="toPerson" data-master="">
+  <view class="master-info" bindtap="toPerson" data-master="">
 		<image src="/images/avatar/aneng.jpg"></image>
 		<view class="master-brief">
 			<view class="master-user">能天使</view>
 			<view class="master-intro">{{intro}}</view>
-			<view class="master-fans">1000 收听</view>
+			<view class="master-fans">4856 收听</view>
 		</view>
-		<view class="master-follow">收听</view>
+		<view class="master-follow">+ 收听</view>
 	</view>
 </view>
 
 <view class="column-title">新人用户</view>
 <view class="column-wrapper">
 	<view class="master-info" bindtap="toPerson" data-master="">
-		<image src="/images/avatar/aneng.jpg"></image>
+		<image src="/images/avatar/amiya.jpg"></image>
 		<view class="master-brief">
-			<view class="master-user">不能天使</view>
+			<view class="master-user">阿米娅</view>
 			<view class="master-intro">{{intro}}</view>
-			<view class="master-fans">3 收听</view>
+			<view class="master-fans">5 收听</view>
 		</view>
-		<view class="master-follow">收听</view>
+		<view class="master-follow">+ 收听</view>
 	</view>
 </view>

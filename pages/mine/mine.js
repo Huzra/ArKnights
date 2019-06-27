@@ -87,16 +87,19 @@ Page({
         userInfo: e.detail.userInfo,
         hasUserInfo: true
       })
-      db.collection('user').where({
-        name: app.globalData.userInfo.nickName
-      }).get({
-        success: function (res) {
-          // res.data 包含该记录的数据
-          console.log(res.data)
+      if(db.collection('user').doc(
+        app.globalData.userInfo.nickName
+      ).get({
+        success: function(res)
+        {
+          console.log(res)
         },
         fail: function (res) {
+          
             db.collection('user').add({
+              // data 字段表示需新增的 JSON 数据
               data: {
+                _id: app.globalData.userInfo.nickName, 
                 name: app.globalData.userInfo.nickName,
                 follow_num: 0,
                 followed_num: 0,
@@ -113,7 +116,7 @@ Page({
             })
           console.log(res.data)
         }
-      })
+      })==null){}
       
     }
   },

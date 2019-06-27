@@ -31,9 +31,9 @@
 
 <view wx:if = "{{hasUserInfo}}" class="profile-wrapper">
 		<block wx:for="{{myProfile}}" >
-			<view class="profile" id="{{item.id}}">
-				<view class="profile-item"> {{item.desc}} </view>
-				<image class="profile-arrow" src="/images/arrow.png"  bindtap="{{item.id}}"></image>
+			<view class="profile" id="{{item.id}}" bindtap="{{item.id}}">
+				<view class="profile-item" > {{item.desc}} </view>
+				<image class="profile-arrow" src="/images/arrow.png"  ></image>
 			</view>
 		</block>
 	</view>
