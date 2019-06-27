@@ -1,0 +1,69 @@
+<view class="info">
+  <view class="item-ans">
+    <image src="{{list.img_url}}" mode="aspectFill" catchtap="toPerson" data-master="{{list.name}}"></image>
+
+    <view>
+      <view class="item-pv">{{list.name}}</view>
+    </view>
+    <view class="start">
+      <image src="/images/start.png"></image>
+    </view>
+
+  </view>
+
+  <view class="item-time">{{list.date}}</view>
+
+  <view class="like-icon" mode="aspectFill">
+    <image src="/images/like.png"></image>
+  </view>
+  <view>
+    <text class="item-ques">{{list.text}}</text>
+  </view>
+</view>
+
+<view class="like">
+  <view>{{list.heared_num}} 听过</view>
+  <view>{{list.Likes_num}} 赞过</view>
+</view>
+
+  <view class="top">
+    <image src="/images/comment.png"></image>
+    <view class="column-top">评论</view>
+  </view>
+
+
+<block wx:for="{{commentList}}">
+<view class="comment">
+  <view class="comment-title">
+    <view class="comment-img">
+      <image src="{{item.img}}" mode="aspectFill"catchtap="toPerson" data-master="{{item.name}}"></image>
+    </view>
+    <view class="com-text" style="flex-direction:row;">
+      <view>
+        <view class="com-name">{{item.name}}</view>
+        <view class="com-time">{{item.date}}</view>
+        <text class="com-content">{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+</block>
+
+
+
+<view class="write">
+    <view class="write-icon">
+      <image src="/images/write.png"></image>
+    </view>
+  </view>
+
+  <view class="comment-bar">
+   <view class="comment-bar__form">
+    <view class="comment-bar__box">
+      <input type="text" class="comment-bar__input" placeholder="写评论..." value="{{SearchData.value}}" bindinput='SearchInput' bindconfirm="SearchConfirm" />
+      <view class="icon-clear" wx:if="{{SearchData.value.length > 0}}" bindtap="SearchClear">
+        <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+  </view>
+</view>

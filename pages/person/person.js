@@ -39,24 +39,14 @@ Page({
         that.setData({ followed_num: res.data.followed_num })
         that.setData({ intro: res.data.intro })
         that.setData({ history: res.data.sound_num })
-        wx.cloud.getTempFileURL({
-          fileList: [res.data.img],
-          success: function(e) {
-            // get temp file URL
-            
-            that.setData({url:e.fileList[0].tempFileURL})
-            
-          },
-          fail: err => {
-            // handle error
-          }
-        })
+        that.setData({url:res.data.img})
       },
       fail : function(res)
       {
         console.log("error")
       }
     }) 
+    console.log(this.data.follow_num)
     db.collection('sound').where({name: this.data.masterID}).get({
       success:function(res)
       {

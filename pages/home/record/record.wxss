@@ -1,0 +1,42 @@
+/* pages/home/record/record.wxss */
+.item-ans{
+	background-color: #fff;
+	padding: 25rpx;
+	margin-bottom: 20rpx;
+}
+.userInfo{
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+  padding-top: -20rpx;
+  padding-bottom: 20rpx;
+}
+
+.userinfo-avatar{
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 50%;
+}
+
+.start image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 25rpx;
+}
+
+
+.userNickname{
+  margin-left: -230rpx;
+	color: #b22222;
+  font-size: 40rpx;
+
+}
+
+.item-ques{
+	letter-spacing: 2px;
+	word-spacing: 2px;
+	font-size: 28rpx;
+	line-height: 36rpx;
+	color: #222;
+  margin-top: 40rpx;
+}

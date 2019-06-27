@@ -1,0 +1,23 @@
+<!--pages/home/record/record.wxml-->
+<view class="item-ans">
+  <view class="userInfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover" ></image>
+    <view>
+      <view class="userNickname">{{userInfo.nickName}}</view>
+    </view>
+    <view class="start">
+      <image  src="/images/start.png"  catchtap='playVoice'></image>
+    </view> 
+  </view>
+
+  <view>
+    <textarea class='item-ques' placeholder='写下你的问题和心声' bindinput='ques_input'  indconfirm='ques_confirm'></textarea>
+  </view>
+
+</view>
+
+
+<view>
+  <button class='btn_confirm' bindtap='ques_confirm'>发送心声</button>
+</view>
+

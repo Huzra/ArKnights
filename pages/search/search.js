@@ -1,3 +1,5 @@
+//共用的搜索栏参数
+var searchText = null
 
 Page({
   data: {
@@ -11,7 +13,9 @@ Page({
     incidatorActiveColor: "#b22222",
     autoplay: true,
     interval: 5000,
-    duration: 1000
+    duration: 1000,
+    //搜索栏的数据
+    searchText: {}
   },
   changeIndicatorDots: function (e) {
     this.setData({
@@ -31,6 +35,27 @@ Page({
   durationChange: function (e) {
     this.setData({
       duration: e.detail.value
+    })
+  },
+
+      //搜索
+  SearchConfirm: function (e) {
+    wx.navigateTo({
+      url: './searchPage/searchPage',
+    })
+    searchText = this.data.searchText //共用的搜索栏内容
+    module.exports.searchText = searchText  //搜索栏内容的向外接口
+  },
+  toPerson: function (e) {
+    console.log(e)
+    wx.navigateTo({
+      url: '../person/person?masterID=' + e.target.dataset.master
+    })
+  },
+  //获得搜索栏数据
+  SearchInput: function (e) {
+    this.setData({
+      searchText: e.detail.value //页面的搜索栏内容
     })
   }
 })

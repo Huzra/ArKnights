@@ -3,7 +3,8 @@
     "pages/mine/mine",
     "pages/home/home",
     "pages/search/search",
-    "pages/myInfo/myInfo"
+    "pages/myInfo/myInfo",
+    "pages/search/searchPage/searchPage"
     
   ],
   "window": {

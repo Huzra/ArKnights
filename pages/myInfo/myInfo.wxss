@@ -56,7 +56,8 @@ width: 148rpx;
 }
 
 .input{
-  height: 144rpx;
+  margin-bottom:40rpx;
+  height: 100rpx;
   font-size: 24rpx;
 }
 .location{
@@ -94,9 +95,9 @@ width: 148rpx;
 }
 
 .comfirm{
-  padding: 10rpx;
-  margin-top: -280rpx;
-  margin-left: 600rpx;
+  position: fixed;  
+  bottom: 640rpx;  
+  left: 600rpx;
 	border-radius: 5rpx;
   width: 100rpx;
 }

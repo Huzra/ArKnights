@@ -1,3 +1,12 @@
+var app = getApp()
+const db = wx.cloud.database({
+  env: 'nmsl-fcwyb'
+})
+
+wx.cloud.init({
+  env: 'nmsl-fcwyb',
+  traceUser: true
+})
 Page({
   data: {
     j: 1,//帧动画初始图片  
@@ -6,6 +15,8 @@ Page({
     hidden: true,
     motto: 'Hello World',
     userInfo: {},
+    followList:[],
+    feed_List:[],
     feedList: [{
       "stamp": "1201",
       "question": "哈哈哈，好，我喜欢你对我的信任。德克萨斯做得到吗？",
@@ -40,40 +51,223 @@ Page({
       "masterID": "初雪",
       "time": "前天9:01",
       "masterAvatar": "chuxue.jpg"
-    }
-    ],
-
-    stamp1206: [{
+    },
+    {
       "stamp": "1206",
-      "question": "与猫相处的奥义是什么",
-      "masterID": "gzy",
-      "masterAvatar": "person1.jpg"
+    "question": "请你帮我转告伊芙利特，“无论今后发生什么，我都会保护你”......见面？不，我还没准备好去见她。",
+      "masterID": "塞雷娅",
+      "time": "一星期前",
+      "masterAvatar": "saileiya.jpg"
     },
     {
       "stamp": "1207",
-      "question": "怎么样的故事才算好故事",
-      "masterID": "czy",
-      "masterAvatar": "person2.jpg"
+      "question": "赫默和塞雷娅，他们究竟为什么吵架？真搞不懂……喂！有没有什么阻止她们的办法？告诉我吧……？",
+      "masterID": "伊芙利特",
+      "time": "一星期前",
+      "masterAvatar": "xiaohuolong.jpg"
     },
     {
       "stamp": "1208",
-      "question": "成名以后这么多年，始终什么心境",
-      "masterID": "qy",
-      "masterAvatar": "person3.jpg"
+      "question": "我不会让伊芙利特见塞雷娅的。也请您相信，我这样做，是对伊芙利特好......！",
+      "masterID": "赫默",
+      "time": "一星期前",
+      "masterAvatar": "hemo.jpg"
     },
     {
       "stamp": "1209",
-      "question": "现在国学文化很火，我们是否将国学作为孩子的重点内容学习？这样的学习能为孩子以后工作生活带来加分电吗？",
-      "masterID": "zgl",
-      "masterAvatar": "person4.jpg"
+      "question": "这些小羊是妈妈留给我的，前辈也觉得它们很可爱吧?欸?热——很烫? 啊请等等，不戴隔热手套的话会被它们烫伤的!？",
+      "masterID": "艾雅法拉",
+      "time": "一个月前",
+      "masterAvatar": "xiaoyang.jpg"
     },
     {
       "stamp": "1210",
-      "question": "10年跑龙套的生涯，你是怎么坚持下来的",
-      "masterID": "md",
-      "masterAvatar": "person5.jpg"
-    }
+      "question": "和因陀罗她们在维多利亚的街头并肩作战——回想起来，我也慢慢变得珍惜起这段回忆了。",
+      "masterID": "推进之王",
+      "time": "一个月前",
+      "masterAvatar": "wang.jpg"
+    },
+    {
+      "stamp": "1206",
+    "question": "请你帮我转告伊芙利特，“无论今后发生什么，我都会保护你”......见面？不，我还没准备好去见她。",
+      "masterID": "塞雷娅",
+      "time": "一星期前",
+      "masterAvatar": "saileiya.jpg"
+    },
+    {
+      "stamp": "1207",
+      "question": "赫默和塞雷娅，他们究竟为什么吵架？真搞不懂……喂！有没有什么阻止她们的办法？告诉我吧……？",
+      "masterID": "伊芙利特",
+      "time": "一星期前",
+      "masterAvatar": "xiaohuolong.jpg"
+    },
+    {
+      "stamp": "1208",
+      "question": "我不会让伊芙利特见塞雷娅的。也请您相信，我这样做，是对伊芙利特好......！",
+      "masterID": "赫默",
+      "time": "一星期前",
+      "masterAvatar": "hemo.jpg"
+    },
+    {
+      "stamp": "1209",
+      "question": "这些小羊是妈妈留给我的，前辈也觉得它们很可爱吧?欸?热——很烫? 啊请等等，不戴隔热手套的话会被它们烫伤的!？",
+      "masterID": "艾雅法拉",
+      "time": "一个月前",
+      "masterAvatar": "xiaoyang.jpg"
+    },
+    {
+      "stamp": "1210",
+      "question": "和因陀罗她们在维多利亚的街头并肩作战——回想起来，我也慢慢变得珍惜起这段回忆了。",
+      "masterID": "推进之王",
+      "time": "一个月前",
+      "masterAvatar": "wang.jpg"
+    },
+    {
+      "stamp": "1206",
+    "question": "请你帮我转告伊芙利特，“无论今后发生什么，我都会保护你”......见面？不，我还没准备好去见她。",
+      "masterID": "塞雷娅",
+      "time": "一星期前",
+      "masterAvatar": "saileiya.jpg"
+    },
+    {
+      "stamp": "1207",
+      "question": "赫默和塞雷娅，他们究竟为什么吵架？真搞不懂……喂！有没有什么阻止她们的办法？告诉我吧……？",
+      "masterID": "伊芙利特",
+      "time": "一星期前",
+      "masterAvatar": "xiaohuolong.jpg"
+    },
+    {
+      "stamp": "1208",
+      "question": "我不会让伊芙利特见塞雷娅的。也请您相信，我这样做，是对伊芙利特好......！",
+      "masterID": "赫默",
+      "time": "一星期前",
+      "masterAvatar": "hemo.jpg"
+    },
+    {
+      "stamp": "1209",
+      "question": "这些小羊是妈妈留给我的，前辈也觉得它们很可爱吧?欸?热——很烫? 啊请等等，不戴隔热手套的话会被它们烫伤的!？",
+      "masterID": "艾雅法拉",
+      "time": "一个月前",
+      "masterAvatar": "xiaoyang.jpg"
+    },
+    {
+      "stamp": "1210",
+      "question": "和因陀罗她们在维多利亚的街头并肩作战——回想起来，我也慢慢变得珍惜起这段回忆了。",
+      "masterID": "推进之王",
+      "time": "一个月前",
+      "masterAvatar": "wang.jpg"
+    },
+      {
+        "stamp": "1206",
+        "question": "请你帮我转告伊芙利特，“无论今后发生什么，我都会保护你”......见面？不，我还没准备好去见她。",
+        "masterID": "塞雷娅",
+        "time": "一星期前",
+        "masterAvatar": "saileiya.jpg"
+      },
+      {
+        "stamp": "1207",
+        "question": "赫默和塞雷娅，他们究竟为什么吵架？真搞不懂……喂！有没有什么阻止她们的办法？告诉我吧……？",
+        "masterID": "伊芙利特",
+        "time": "一星期前",
+        "masterAvatar": "xiaohuolong.jpg"
+      },
+      {
+        "stamp": "1208",
+        "question": "我不会让伊芙利特见塞雷娅的。也请您相信，我这样做，是对伊芙利特好......！",
+        "masterID": "赫默",
+        "time": "一星期前",
+        "masterAvatar": "hemo.jpg"
+      },
+      {
+        "stamp": "1209",
+        "question": "这些小羊是妈妈留给我的，前辈也觉得它们很可爱吧?欸?热——很烫? 啊请等等，不戴隔热手套的话会被它们烫伤的!？",
+        "masterID": "艾雅法拉",
+        "time": "一个月前",
+        "masterAvatar": "xiaoyang.jpg"
+      },
+      {
+        "stamp": "1210",
+        "question": "和因陀罗她们在维多利亚的街头并肩作战——回想起来，我也慢慢变得珍惜起这段回忆了。",
+        "masterID": "推进之王",
+        "time": "一个月前",
+        "masterAvatar": "wang.jpg"
+      }
     ]
+  },
+  onLoad: function () {
+    var that=this
+    let list=[]
+    db.collection('user').doc(app.globalData.userInfo.nickName).get().then(
+      res=> {
+        console.log(res.data)
+        that.setData({followList: res.data.follow})
+        console.log(that.data.followList)
+        for (var i = 0; i < that.data.followList.length;i++)
+        {
+        db.collection('sound').where({ name: that.data.followList[i] }).get().then(
+          e=> {
+            console.log(e.data)
+            if(!e.data.length){}
+            else 
+            {
+              if (!list.length){
+                list= e.data
+              }
+              else{
+                list=list.concat(e.data)
+              } 
+            }
+            that.setData({feed_List:list})
+          })
+        }
+      })
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
   },
 getNowFormatDate() {
     var date = new Date();
@@ -113,6 +307,9 @@ getNowFormatDate() {
             //本地文件存储的大小限制为 100M  
             var savedFilePath = res.savedFilePath
             console.log("savedFilePath: " + savedFilePath)
+            wx.navigateTo({
+              url: './record/record?savedFilePath=' + savedFilePath,
+            })
           }
         })
         wx.showToast({

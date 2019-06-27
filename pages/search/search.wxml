@@ -12,7 +12,7 @@
 <view class="weui-search-bar">
    <view class="weui-search-bar__form">
     <view class="weui-search-bar__box">
-      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <icon class="weui-icon-search_in-box" type="search" size="14" bindtap="SearchConfirm"></icon>
       <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{SearchData.value}}" bindinput='SearchInput' bindconfirm="SearchConfirm" />
       <view class="weui-icon-clear" wx:if="{{SearchData.value.length > 0}}" bindtap="SearchClear">
         <icon type="clear" size="14"></icon>
@@ -32,7 +32,7 @@
 </swiper>
 <view class="column-title">热推名人</view>
 <view class="column-wrapper">
-  <view class="master-info" bindtap="toPerson" data-master="">
+<view class="master-info" bindtap="toPerson" data-master="能天使">
 		<image src="/images/avatar/aneng.jpg"></image>
 		<view class="master-brief">
 			<view class="master-user">能天使</view>

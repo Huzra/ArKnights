@@ -1,9 +1,9 @@
 .login{
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: #eee;
   margin-bottom: 20rpx;
-  margin-top: 20rpx;
+  padding-bottom: 50rpx;
 }
 
 .userinfo {
@@ -14,13 +14,25 @@
 }
 
 .img {
-  width: 140rpx;
-  height: 140rpx;
+  width: 160rpx;
+  height: 160rpx;
   margin: 44rpx;
   border-radius: 50%;
   display: flex;
   overflow:hidden;
 }
+.img-login{
+  padding-left: 250rpx;
+  padding-top: 180rpx;
+}
+
+.btn-login{
+  margin-left: 150rpx;
+  margin-right: 150rpx;
+  margin-top: 20rpx;
+  color:#b22222;
+}
+
 
 .userset{
   display: flex;
@@ -43,8 +55,7 @@
   color: rgb(158, 157, 157);
   font-size:24rpx;
   word-break: break-all;
-  margin-right: 20rpx;
-  padding: 10rpx;
+  padding-left: 1rpx;
 }
 
 .flex-wrp{
@@ -93,8 +104,15 @@
   font-size:24rpx;
 }
 
-.profile-wrapper, .account-wrapper {
-    margin-top: 30rpx;
+.profile-wrapper{
+    margin-top: -48rpx;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+
+.account-wrapper {
+    margin-top: 10rpx;
     background-color: #fff;
     margin-bottom: 20rpx;
 }

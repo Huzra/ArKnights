@@ -1,5 +1,8 @@
 <view class="login">
-  <button class = "btn-login" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
+  <view class="img-login " wx:if="{{!hasUserInfo}}">
+    <open-data type="userAvatarUrl" class='img'></open-data>
+</view>
+<button class = "btn-login" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" type="warn"> 登 陆 </button>
   <block wx:else>
     <view class="userinfo" style="flex-direction:row;">
     <view>
@@ -31,18 +34,18 @@
 
 <view wx:if = "{{hasUserInfo}}" class="profile-wrapper">
 		<block wx:for="{{myProfile}}" >
-			<view class="profile" id="{{item.id}}" bindtap="{{item.id}}">
-				<view class="profile-item" > {{item.desc}} </view>
+			<view class="profile" id="{{item.id}}"bindtap="{{item.id}}">
+				<view class="profile-item"> {{item.desc}} </view>
 				<image class="profile-arrow" src="/images/arrow.png"  ></image>
 			</view>
 		</block>
-	</view>
-	<view class="account-wrapper">
+</view>
+<view wx:if = "{{hasUserInfo}}" class="account-wrapper">
 		<view class="account" wx:for="{{myAccount}}">
 			<view class="account-item"> {{item}} </view>
 			<image class="account-arrow" src="/images/arrow.png"></image>
 		</view>    
-	</view>
+</view>
   
   <button type="default" class="btn-quit" wx:if="{{hasUserInfo}}" bindtap="quit"> 退出登录 </button>
 

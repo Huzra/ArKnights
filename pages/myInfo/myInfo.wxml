@@ -15,6 +15,9 @@
 <view class="motto">
     <view class="moTitle">签名：</view>
     <textarea class="input" name="moText" bindinput="inputMotto" placeholder='{{motto}}'></textarea>
+    <view class="comfirm">
+    <button class="btn_save" bindtap="btn_save">保存</button>
+  </view>
 </view>
 
 <view class="info-pad">
@@ -29,7 +32,5 @@
     <view class="genText">{{gender}}</view>
   </view>
 
-  <view class="comfirm">
-    <button class="btn_save" bindtap="btn_save">保存</button>
-  </view>
+  
 

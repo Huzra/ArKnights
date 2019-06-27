@@ -1,0 +1,13 @@
+<block wx:if="{{loaded}}" wx:for="{{searchList}}" wx:key="_id">
+  <view class="column-wrapper" wx:if="{{searchList.length>0}}">
+    <view class="master-info" >
+      <image src="{{item.img}}"catchtap="toPerson" data-master="{{item.name}}"></image>
+      <view class="master-brief">
+        <view class="master-user">{{item.name}}</view>
+        <view class="master-fans">{{item.followed_num}} 收听</view>
+      </view>
+      <view class="master-follow">+ 收听</view>
+    </view>
+  </view>
+</block>
+

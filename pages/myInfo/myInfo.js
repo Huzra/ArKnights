@@ -8,9 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo:{},
-    gender:{},
-    motto:{}
+    userInfo: {},
+    gender: {},
+    motto: {}
   },
 
   /**
@@ -18,17 +18,17 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      userInfo:app.globalData.userInfo,
-      motto:app.globalData.motto
+      userInfo: app.globalData.userInfo,
+      motto: app.globalData.motto
     })
     userInfo = app.globalData.userInfo
     //判断用户性别
-    if(userInfo.gender == 1){
+    if (userInfo.gender == 1) {
       this.setData({
-        gender:"boy"
+        gender: "boy"
       })
     }
-    else{
+    else {
       this.setData({
         gender: "girl"
       })
@@ -83,8 +83,17 @@ Page({
   onShareAppMessage: function () {
 
   },
-  //修改签名
-  inputMotto:function(e){
-    app.globalData.motto = e.detail.value
+  //如果保存签名则修改签名
+  inputMotto: function (e) {
+    motto = e.detail.value
+  },
+  //是否保存签名
+  btn_save: function (e) {
+    app.globalData.motto = motto
+    wx.showToast({
+      title: '保存成功！',
+      icon: 'success',
+      duration: 1000
+    })
   }
 })
