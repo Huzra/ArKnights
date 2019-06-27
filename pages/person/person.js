@@ -1,14 +1,11 @@
 // pages/person/person.js
-const db = wx.cloud.database({
-  env: 'nmsl-fcwyb'
-})
+var app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    nickname,
+    nickname:"能天使",
     userInfo: {},
     feedList: [{
       "stamp": "1201",
@@ -135,22 +132,24 @@ Page({
   onShareAppMessage: function () {
 
   },
-  followfunction:{
-    db.collection('user').where().add({
-      // data 字段表示需新增的 JSON 数据
+  followfunction: function (){
+    const db = wx.cloud.database({
+      env: 'nmsl-fcwyb'
+    })
+    const _ = db.command
+    db.collection('user').doc("2f54b0685d1428890194737a130a734c").update({
       data: {
-        // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
-        name: app.globalData.userInfo.nickName,
-        follow_num: "",
-        followed_num: "",
-        sound_num: "",
-        intro: "",
-        follow: [],
-        sound: [],
-        img: app.globalData.userInfo.avatarUrl
+        follow_num: _.inc(1)
       },
-      success: function (res) {
-        // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+      success: res=>{
+        console.log(res)
+      }
+    })
+    db.collection('user').doc("2f54b0685d1428890194737a130a734c").update({
+      data: {
+        follow: _.push("能天使")
+      },
+      success: res => {
         console.log(res)
       }
     })
