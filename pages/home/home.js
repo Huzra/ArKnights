@@ -5,38 +5,38 @@ Page({
     userInfo: {},
     feedList: [{
       "stamp": "1201",
-      "question": "最近\"谷物大脑\"很火，多个观点挑战传统观念，如杂物全麦等不利于大脑健康，容易造成老年痴呆症，请问您在吗解读本书观点",
-      "masterID": "123",
-      "time":"5分钟前",
-      "masterAvatar": "person1.jpg"
+      "question": "哈哈哈，好，我喜欢你对我的信任。德克萨斯做得到吗？",
+      "masterID": "拉普兰德",
+      "time": "5分钟前",
+      "masterAvatar": "lapulande.jpg"
     },
     {
       "stamp": "1202",
-      "question": "很多中年人都说，我从xx岁起就不看小说了。我的理解是，对已经基本看清世界的“不惑”者，小说认识世界的效率太低。您怎么看",
-      "masterID": "czy",
-      "time": "12:34",
-      "masterAvatar": "person2.jpg"
+      "question": "这样发展下去，你我互相博弈的那一天，迟早会到来。但是我，看上去很高兴？也许吧，毕竟我很期待和你交手，也会珍惜那一天到来前的时光。",
+      "masterID": "银灰",
+      "time": "17:56",
+      "masterAvatar": "yinhui.jpg"
     },
     {
       "stamp": "1203",
-      "question": "大叔，用通俗易懂的话来讲讲什么才是真正的盈利模式，又有哪些成功的盈利模式可以给我们分析分析！",
-      "masterID": "qy",
-      "time": "17:56",
-      "masterAvatar": "person3.jpg"
+      "question": "德克萨斯那家伙能活得这么潇洒，可多亏有我罩着她，这不是明摆着的事嘛~",
+      "masterID": "能天使",
+      "time": "12:34",
+      "masterAvatar": "aneng.jpg"
     },
     {
       "stamp": "1204",
-      "question": "现在国学文化很火，我们是否将国学作为孩子的重点内容学习？这样的学习能为孩子以后工作生活带来加分电吗？",
-      "masterID": "zgl", 
-      "time": "前天19:55",
-      "masterAvatar": "person4.jpg"
+      "question": "自由的生活，吵闹的伙伴，虽然总给我带来麻烦，不过…...我现在觉得这样也不坏。",
+      "masterID": "德克萨斯",
+      "time": "昨天19:55",
+      "masterAvatar": "dekesasi.jpg"
     },
     {
       "stamp": "1205",
-      "question": "您上一次哭是什么时候",
-      "masterID": "md",
-      "time": "昨天9:01",
-      "masterAvatar": "person5.jpg"
+      "question": "小时候，我在外玩耍扭伤了脚，是哥哥背了我一晚上才找到了住家。那时我想着，一定要成为哥哥那样的人。但是现在……呵，没什么。",
+      "masterID": "初雪",
+      "time": "前天9:01",
+      "masterAvatar": "chuxue.jpg"
     }
     ],
 
