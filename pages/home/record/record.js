@@ -1,5 +1,8 @@
 // pages/home/record/record.js
 //传入的临时文件路径
+const db = wx.cloud.database({
+  env: 'nmsl-fcwyb'
+})
 var app= getApp();
 var savedFilePath = {};
 //文字心声
@@ -88,14 +91,31 @@ Page({
 
   ques_confirm:function(e){
     //按下发送心声
-    wx.showModal({
-      title: '提示',
-      content: '成功发送!',
-      showCancel: false,
-    })
-    wx.navigateBack({
-      delta:1
-    })
+    db.collection('sound').add({
+      data: {
+        name: app.globalData.userInfo.nickName,
+        img_url: app.globalData.userInfo.avatarUrl,
+        text: ques_text,
+        comments: [],
+        sound: [],
+        date:new Date(),
+        Likes_num: 0,
+        heared_num:0,
+        
+      },
+      success: function (res) {
+        // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+        console.log(res)
+        wx.showModal({
+          title: '提示',
+          content: '成功发送!',
+          showCancel: false,
+        })
+        wx.navigateBack({
+          delta: 1
+        })
+      }
+      })
   },
 
   playVoice:function(e){

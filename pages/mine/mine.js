@@ -18,7 +18,8 @@ Page({
       { "desc": "我问", "id": "myQues" }
     ],
     myAccount: ["帮助", "关于分答"],
-    motto:"暂无简介"
+    motto:"暂无简介",
+    list:[]
   },
 
   /**
@@ -39,8 +40,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      motto:app.globalData.motto
+    db.collection('user').doc(
+      app.globalData.userInfo.nickName
+    ).get().then(res=>{
+      this.setData({list:res.data})
     })
   },
 
@@ -79,6 +82,7 @@ Page({
 
   },
    getUserInfo: function (e) {
+     var _this=this
     console.log(e.detail.userInfo);
     if (e.detail.userInfo == null) { }
     else {
@@ -92,6 +96,7 @@ Page({
       ).get({
         success: function(res)
         {
+          _this.setData({list:res.data})
           console.log(res)
         },
         fail: function (res) {
@@ -112,6 +117,7 @@ Page({
               success: function (res) {
                 // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
                 console.log(res)
+                _this.setData({ list: res.data })
               }
             })
           console.log(res.data)

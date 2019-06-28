@@ -10,7 +10,7 @@
     </view>
       <view class="userset" style="flex-direction:column;">
         <open-data type="userNickName" class='nick' lang="zh_CN"></open-data>
-        <view class="intro">{{motto}}</view>
+        <view class="intro">{{list.intro}}</view>
      </view>
     </view>
     <view class="flex-wrp" style="flex-direction:row;">

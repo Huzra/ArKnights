@@ -7,7 +7,7 @@
         <view>
 				  <view class="item-pv">{{item.name}}</view>
         </view>
-        <view class="start">
+        <view class="start" hover-stop-propagation="true" catchtap="playVoice">
          <image  src="/images/start.png"></image>
         </view> 
       </view>

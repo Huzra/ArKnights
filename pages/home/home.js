@@ -232,7 +232,30 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this
+    let list = []
+    db.collection('user').doc(app.globalData.userInfo.nickName).get().then(
+      res => {
+        console.log(res.data)
+        that.setData({ followList: res.data.follow })
+        console.log(that.data.followList)
+        for (var i = 0; i < that.data.followList.length; i++) {
+          db.collection('sound').where({ name: that.data.followList[i] }).get().then(
+            e => {
+              console.log(e.data)
+              if (!e.data.length) { }
+              else {
+                if (!list.length) {
+                  list = e.data
+                }
+                else {
+                  list = list.concat(e.data)
+                }
+              }
+              that.setData({ feed_List: list })
+            })
+        }
+      })
   },
 
   /**
@@ -306,6 +329,15 @@ getNowFormatDate() {
             //持久路径  
             //本地文件存储的大小限制为 100M  
             var savedFilePath = res.savedFilePath
+            wx.cloud.uploadFile({
+              cloudPath: 'test.silk', // 上传至云端的路径
+              filePath: savedFilePath, // 小程序临时文件路径
+              success: res => {
+                // 返回文件 ID
+                console.log(res.fileID)
+              },
+              fail: console.error
+            })
             console.log("savedFilePath: " + savedFilePath)
             wx.navigateTo({
               url: './record/record?savedFilePath=' + savedFilePath,
@@ -390,6 +422,33 @@ getNowFormatDate() {
     wx.navigateTo({
       url: '../person/person?masterID=' + e.target.dataset.master
     })
+  },
+  playVoice: function (e) {
+    wx: wx.showToast({
+      title: '开始播放',
+      duration: 1000,
+    })
+    wx.cloud.downloadFile({
+      fileID: 'cloud://nmsl-fcwyb.6e6d-nmsl-fcwyb-1259513146/test.silk', // 文件 ID
+      success: res => {
+        console.log(res.tempFilePath)
+        wx: wx.playVoice({
+          filePath: res.tempFilePath,
+          duration: 10000,
+          success: function (res) {
+            wx: wx.showToast({
+              title: '播放结束',
+              duration: 1000,
+            })
+          },
+          fail: function (res) {
+            console.log('失败了啊：' + res)
+          }
+        })
+      },
+      fail: console.error
+    })
+    
   }
 })
 //麦克风帧动画  

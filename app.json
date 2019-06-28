@@ -3,8 +3,12 @@
     "pages/mine/mine",
     "pages/home/home",
     "pages/search/search",
+    "pages/comment/comment",
     "pages/myInfo/myInfo",
+    "pages/person/person",
+    "pages/home/record/record",
     "pages/search/searchPage/searchPage"
+
     
   ],
   "window": {

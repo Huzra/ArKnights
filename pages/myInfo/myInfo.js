@@ -1,6 +1,9 @@
 // pages/myInfo/myInfo.js
 var app = getApp();
 var userInfo = {};
+const db = wx.cloud.database({
+  env: 'nmsl-fcwyb'
+})
 var motto = null;
 Page({
 
@@ -10,7 +13,8 @@ Page({
   data: {
     userInfo: {},
     gender: {},
-    motto: {}
+    motto: {},
+    list:[]
   },
 
   /**
@@ -33,6 +37,9 @@ Page({
         gender: "girl"
       })
     }
+    db.collection('user').doc(app.globalData.userInfo.nickName).get().then(res=>{
+      this.setData({list:res.data})
+    })
   },
 
   /**
@@ -89,11 +96,22 @@ Page({
   },
   //是否保存签名
   btn_save: function (e) {
-    app.globalData.motto = motto
-    wx.showToast({
-      title: '保存成功！',
-      icon: 'success',
-      duration: 1000
+    db.collection('user').doc(app.globalData.userInfo.nickName).update({
+      // data 传入需要局部更新的数据
+      data: {
+        intro:motto
+      },
+      success: function(res){
+        console.log(res)
+        wx.showToast({
+          title: '保存成功！',
+          icon: 'success',
+          duration: 1000
+        })
+        _this.setData({motto:res.data.intro})
+      },
+      fail: console.error
     })
+    
   }
 })

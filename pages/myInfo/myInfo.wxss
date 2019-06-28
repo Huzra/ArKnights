@@ -94,12 +94,11 @@ width: 148rpx;
   font-size: 24rpx;
 }
 
-.comfirm{
-  position: fixed;  
+.comfirm{  
   bottom: 640rpx;  
   left: 600rpx;
 	border-radius: 5rpx;
-  width: 100rpx;
+  width: 130rpx;
 }
 .btn_save{
   color:black;
